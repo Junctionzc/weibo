@@ -1,0 +1,64 @@
+.weibo-cell {
+    min-height: 80px;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.avatar {
+    height: 60px;
+    width: 48px;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+}
+.weibo-content {
+    display: block;
+    font-size: 20px;
+}
+.push-by-message {
+    font-size: 12px;
+}
+.weibo-cell-menu {
+    margin-top: 28px;
+}
+.weibo-comment {
+    padding: 4px;
+}
+.weibo-update-form {
+    margin: 10px 0px 0px 0px;
+}
+.comment-add-div {
+    margin: 10px 0px 28px 0px;
+}
+.weibo-update-content, .comment-content{
+    width: 84%;
+    height: 32px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding-left: 6px;
+}
+.comment-container {
+    margin-top: 40px;
+    padding: 10px 10px 10px 60px;
+}
+.cell-inner {
+    border-top: 1px solid #d9d9d9;
+    padding: 10px;
+}
+.avatar-s {
+    height: 38px;
+    width: 30px;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    margin: 0px 10px 10px 0px;
+    float: left;
+}
+span.time.right.span-margin {
+    display: block;
+    font-size: 12px;
+}
+.comment-div {
+    font-size: 15px;
+}

@@ -1,0 +1,136 @@
+div, a, h1 {
+    font-family: Microsoft Yahei;
+}
+/*div {
+    outline-style: dashed;
+    outline-width: 1px;
+    outline-color: red;
+}*/
+
+/*标题栏样式*/
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills> li.active>a:hover {
+    color: #FFF;
+    background-color: #337ab7;
+}
+.navbar-inverse {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
+    color: #fff;
+    background-color: #286090;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-inverse .navbar-toggle, .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #fff;
+}
+@media (max-width: 767px) {
+    .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+        color: #fff;
+    }
+}
+
+.duan-float-left {
+    float: left;
+}
+
+/*内容样式*/
+.duan-index {
+    text-align: center;
+}
+.duan-title {
+    margin-top: 20px;
+}
+.duan-name {
+    font-size: 36px;
+    color: #337ab7;
+    margin-bottom: 20px;
+}
+.duan-about {
+    font-size: 20px;
+    color: gray;
+}
+.duan-sign-box {
+    margin-top: 20px;
+}
+.duan-sign-box-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.duan-sign-box-navigate,
+.duan-sign-box-navigate:hover, .duan-sign-box-navigate:focus {
+    margin: 0px 10px;
+    color: gray;
+    text-decoration: none;
+}
+.duan-sign-box-navigate-active, .duan-sign-box-navigate-active:hover,
+.duan-sign-box-navigate-active:focus {
+    margin: 0px 10px;
+    border-bottom: 2px solid #337ab7;
+    color: #337ab7;
+    text-decoration: none;
+}
+.duan-group-input {
+    margin: 20px auto;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    width: 250px;
+}
+.duan-input-wrapper {
+    position: relative;
+}
+.duan-input-error {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    color: #a94442;
+    font-size: 12px;
+}
+.duan-input-wrapper+.duan-input-wrapper {
+    border-top: 1px solid lightgray;
+}
+.duan-input-wrapper>input {
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+}
+.duan-input-wrapper>input:focus {
+    outline: none;
+}
+.duan-group-button {
+    width: 250px;
+    margin: 20px auto;
+}
+.duan-group-button>button {
+    display: block;
+}
+.duan-button-default {
+    height: 32px;
+    width: 100%;
+    background: #337ab7;
+    color: #fff;
+    border: 1px solid #337ab7;
+    border-radius: 2px;
+}
+.duan-button-default:hover {
+    background: #286090;
+}
+.duan-group-other {
+    width: 250px;
+    margin: 0px auto;
+}
+.duan-group-other>input, .duan-group-other>span{
+    float: left;
+}
+.te111story-other-forget-password {
+    float: right;
+}
+
+.duan-comment-div {
+
+}
+.duan-hide {
+    display: none;
+}

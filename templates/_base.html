@@ -1,0 +1,23 @@
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ url_for('blog.index') }}">断岸的故事</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('blog.index') }}">博客</a></li>
+                <li><a href="{{ url_for('weibo.index') }}">微博</a></li>
+            </ul>
+        <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('user.register_view') }}">注册</a></li>
+                <li><a href="{{ url_for('user.login_view') }}">登录</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

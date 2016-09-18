@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/duan.css">
+    <link rel="stylesheet" href="/static/css/duan-main.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/js/api.js"></script>
+    <script src="/static/js/weibo.js"></script>
+</head>
+<body>
+    {% include '_base.html' %}
+    <div class="container">
+        <div class="background">
+            <div class="content clearfix">
+                <div class="input-group">
+                    <input type="text" id="id-input-weibo" name="weibo" class="form-control" placeholder="Weibo">
+                    <span class="input-group-btn">
+                        <button id="id-button-weibo-add" class="btn btn-primary" type="button">水一发！</button>
+                    </span>
+                </div>
+                <div class="box weibo-container">
+                    {% for t in weibos %}
+                        <div class="weibo-cell cell item" data-id="{{ t.id }}">
+                            <img src="{{ t.avatar }}" class="avatar">
+                            <div class="push-by-message">
+                                <span class="right span-margin">{{ t.name }} 发表于 </span>
+                                <span class="right span-margin">{{ t.created_time }}</span>
+                            </div>
+                            <span class="weibo-content">{{ t.weibo }}</span>
+                            <div class="right span-margin weibo-cell-menu">
+                                <button class="weibo-edit btn-xs btn-primary" data-id="{{ t.id }}">编辑</button>
+                                <button class="weibo-delete btn-xs btn-danger" data-id="{{ t.id }}">删除</button>
+                                <a href="#" class="weibo-comment label label-primary">评论(<span class="comments-num">{{ t.comments_num }}</span>)</a>
+                            </div>
+                            <div class="weibo-update-form duan-hide">
+                                <input class="weibo-update-content" type="text" value="">
+                                <button class="weibo-update btn-sm btn-default">更新</button>
+                            </div>
+                            <div class="duan-comment-div duan-hide">
+                                <div class="comment-add-div">
+                                    <img src="{{ t.avatar }}" class="avatar">
+                                    <input class="comment-id" type="hidden" name="weibo_id" value="{{ t.id }}">
+                                    <input class="comment-content left m" name="comment"  placeholder="Comment">
+                                    <button class="comment-add  btn-sm btn-default">发表</button>
+                                </div>
+                                <div class="box comment-container">
+                                {% for c in t.comment %}
+                                    <div class="cell-inner item">
+                                        <img src="{{ c.get_avatar() }}" class="avatar-s">
+                                        <div class="comment-div">
+                                            <span class="name right span-margin">{{ c.name }}:</span>
+                                            <span class="comment">{{ c.comment }}</span>
+                                        </div>
+                                        <span class="time right span-margin">{{ c.created_time }}</span>
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

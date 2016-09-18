@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/duan.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>注册与登录</title>
+</head>
+<body>
+    {% include '_base.html' %}
+    <div class="duan-index">
+        <div class="duan-title">
+            <p class="duan-name">断岸的故事</p>
+            <p class="duan-about">跟瓜聚聚学习掏粪技能</p>
+        </div>
+        <form action="/user/login" method="post" class="form" role="form">
+            <div class="duan-sign-box">
+                <div class="duan-sign-box-title">
+                    <a class="duan-sign-box-navigate" href="{{ url_for('user.register_view') }}">注册</a>
+                    <a class="duan-sign-box-navigate-active" href="{{ url_for('user.login_view') }}">登录</a>
+                </div>
+                <div class="duan-group-input">
+                    <div class="duan-input-wrapper">
+                        <input name="username" placeholder="用户名">
+                    </div>
+                    <div class="duan-input-wrapper">
+                        <input name="password" placeholder="密码">
+                    </div>
+                </div>
+                <div class="duan-group-button">
+                    <button class="duan-button-default">登录</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
