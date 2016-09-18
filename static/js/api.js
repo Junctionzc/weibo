@@ -70,11 +70,10 @@ api.weiboUpdate = function(form, response) {
     api.post(url, form, response)
 }
 
-api.weiboDelete = function(weiboId, response) {
+api.weiboDelete = function(form, response) {
     // 删除一条微博
-    var url = '/api/weibo/delete/' + weiboId
-    var form = {}
-    api.get(url, response)
+    var url = '/api/weibo/delete'
+    api.post(url, form, response)
 }
 
 // 评论 API

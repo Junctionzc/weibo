@@ -9,7 +9,7 @@ var weiboTemplate = function(weibo) {
     <div class="weibo-cell cell item" data-id="${ w.id }">
       <img src="${ w.avatar }" class="avatar">
       <div class="push-by-message">
-          <span class="right span-margin">${ w.name } 发表于 </span>
+          <span class="right span-margin weibo-user">${ w.name }</span> 发表于
           <span class="right span-margin">${ w.created_time }</span>
       </div>
       <span class="weibo-content">${ w.weibo }</span>
@@ -232,22 +232,34 @@ var bindEventWeiboDelete = function() {
       log(weiboId)
       // 得到整个微博条目的标签
       var weiboCell = $(this).closest('.weibo-cell')
+      var weiboUser = $(weiboCell).find('.weibo-user').text()
+      log('weiboUser', weiboUser)
+      var form = {
+          weiboId: weiboId,
+          weiboUser: weiboUser,
+      }
 
       // 调用 api.weiboDelete 函数来删除微博并且在删除成功后删掉页面上的元素
-      api.weiboDelete(weiboId, function(response) {
+    //   api.weiboDelete(weiboId, function(response) {
+      var response = function(r) {
           // 直接用一个匿名函数当回调函数传给 weiboDelete
           // 这是 js 常用的方式
-          var r = response
+          console.log('成功', arguments)
+          log(r)
           if(r.success) {
+              // 如果成功就添加到页面中
+              // 因为添加微博会返回已添加的微博数据所以直接用 r.data 得到
               console.log('成功', arguments)
-              // slideUp 可以以动画的形式删掉一个元素
               $(weiboCell).slideUp()
               alert("删除成功")
           } else {
+              // 失败，弹出提示
               console.log('错误', arguments)
-              alert("删除失败")
+              alert(r.message)
           }
-      })
+      }
+
+      api.weiboDelete(form, response)
     })
 }
 
