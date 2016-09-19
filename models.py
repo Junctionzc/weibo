@@ -59,7 +59,7 @@ class Weibo(db.Model, ModelHelper):
         # self.comments_num = 0
 
     def valid(self):
-        return len(self.weibo) > 2 and len(self.weibo) < 10 and len(self.name) > 0
+        return len(self.weibo) > 2 and len(self.weibo) < 512 and len(self.name) > 0
 
     # def comments(self):
     #     cs = Comment.query.filter_by(weibo_id=self.id).all()
@@ -74,8 +74,8 @@ class Weibo(db.Model, ModelHelper):
     def error_message(self):
         if len(self.weibo) <= 2:
             return '微博太短了，至少要 3 个字符'
-        elif len(self.weibo) >= 10:
-            return '微博不能大于9个字符'
+        elif len(self.weibo) >= 512:
+            return '微博不能大于 511 个字符'
 
     def json(self):
         """

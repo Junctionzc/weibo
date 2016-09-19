@@ -33,9 +33,11 @@ def add():
     }
     if t.valid():
         t.save()
+        log('success')
         r['success'] = True
         r['data'] = t.json()
     else:
+        log('error')
         r['success'] = False
         message = t.error_message()
         r['message'] = message
