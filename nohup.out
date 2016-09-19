@@ -1,0 +1,2421 @@
+[2016-09-18 05:49:32 -0400] [22156] [INFO] Starting gunicorn 19.6.0
+[2016-09-18 05:49:32 -0400] [22156] [INFO] Listening at: http://127.0.0.1:3000 (22156)
+[2016-09-18 05:49:32 -0400] [22156] [INFO] Using worker: sync
+[2016-09-18 05:49:32 -0400] [22159] [INFO] Booting worker with pid: 22159
+[2016-09-18 05:54:08,557] ERROR in app: Exception on /api/weibo/delete/1 [GET]
+Traceback (most recent call last):
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/www/weibo/api.py", line 78, in delete
+    for c in w.comments:
+AttributeError: 'NoneType' object has no attribute 'comments'
+[2016-09-18 06:09:57 -0400] [22156] [INFO] Handling signal: term
+[2016-09-18 06:09:57 -0400] [22159] [INFO] Worker exiting (pid: 22159)
+登录成功
+2016/09/18 05:50:09 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 05:50:09 t < Weibo
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7fe45c7b1f98>)
+created_time: (2016/09/18 17:50:09)
+weibo: (gua)
+comment: () 
+>
+
+2016/09/18 05:50:21 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', '吃瓜')])
+2016/09/18 05:50:21 weibo_id 1
+2016/09/18 05:50:21 weibo 吃瓜
+2016/09/18 05:50:21 w < Weibo
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7fe45c7730f0>)
+id: (1)
+created_time: (2016/09/18 17:50:09)
+weibo: (吃瓜) 
+>
+
+2016/09/18 05:50:21 u < User
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7fe45c773470>)
+id: (1)
+created_time: (1474121927)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+password: (123)
+username: (gua) 
+>
+
+2016/09/18 05:50:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 05:50:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 05:50:55 i.comments_num 1
+2016/09/18 05:51:02 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 05:51:03 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 05:51:03 i.comments_num 1
+2016/09/18 05:51:21 form ImmutableMultiDict([('weibo', 'hello')])
+2016/09/18 05:51:21 t < Weibo
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7fe45d1a36d8>)
+created_time: (2016/09/18 17:51:21)
+weibo: (hello)
+comment: () 
+>
+
+2016/09/18 05:51:33 form ImmutableMultiDict([('weibo', 'hello')])
+2016/09/18 05:51:33 t < Weibo
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7fe45c7424e0>)
+created_time: (2016/09/18 17:51:33)
+weibo: (hello)
+comment: () 
+>
+
+登录成功
+[2016-09-18 06:09:57 -0400] [22156] [INFO] Shutting down: Master
+[2016-09-18 06:12:27 -0400] [22344] [INFO] Starting gunicorn 19.6.0
+[2016-09-18 06:12:27 -0400] [22344] [INFO] Listening at: http://127.0.0.1:3000 (22344)
+[2016-09-18 06:12:27 -0400] [22344] [INFO] Using worker: sync
+[2016-09-18 06:12:27 -0400] [22347] [INFO] Booting worker with pid: 22347
+[2016-09-18 06:12:27 -0400] [22347] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/arbiter.py", line 557, in spawn_worker
+    worker.init_process()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 126, in init_process
+    self.load_wsgi()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/workers/base.py", line 136, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 65, in load
+    return self.load_wsgiapp()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/app/wsgiapp.py", line 52, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/gunicorn/util.py", line 357, in import_app
+    __import__(module)
+ImportError: No module named 'manage'
+[2016-09-18 06:12:27 -0400] [22347] [INFO] Worker exiting (pid: 22347)
+[2016-09-18 06:12:27 -0400] [22344] [INFO] Shutting down: Master
+[2016-09-18 06:12:27 -0400] [22344] [INFO] Reason: Worker failed to boot.
+[2016-09-18 06:13:03 -0400] [22349] [INFO] Starting gunicorn 19.6.0
+[2016-09-18 06:13:03 -0400] [22349] [INFO] Listening at: http://127.0.0.1:3000 (22349)
+[2016-09-18 06:13:03 -0400] [22349] [INFO] Using worker: sync
+[2016-09-18 06:13:03 -0400] [22352] [INFO] Booting worker with pid: 22352
+登录成功
+登录成功
+2016/09/18 06:27:22 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 06:27:22 t < Weibo
+created_time: (2016/09/18 18:27:22)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7eb8>)
+weibo: (gua) 
+>
+
+2016/09/18 06:27:29 form ImmutableMultiDict([('weibo', 'hello'), ('weibo_id', '1')])
+2016/09/18 06:27:29 weibo_id 1
+2016/09/18 06:27:29 weibo hello
+2016/09/18 06:27:29 w < Weibo
+created_time: (2016/09/18 18:27:22)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4e10>)
+weibo: (hello) 
+>
+
+2016/09/18 06:27:29 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fb1d0>)
+password: (123) 
+>
+
+2016/09/18 06:32:14 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 06:32:14 t < Weibo
+created_time: (2016/09/18 18:32:14)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298f470>)
+weibo: (gua) 
+>
+
+2016/09/18 06:32:22 form ImmutableMultiDict([('weibo', 'hello'), ('weibo_id', '1')])
+2016/09/18 06:32:22 weibo_id 1
+2016/09/18 06:32:22 weibo hello
+2016/09/18 06:32:22 w < Weibo
+created_time: (2016/09/18 18:32:14)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbac8>)
+weibo: (hello) 
+>
+
+2016/09/18 06:32:22 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fb518>)
+password: (123) 
+>
+
+2016/09/18 06:33:37 form ImmutableMultiDict([('weibo', 'gua'), ('weibo_id', '1')])
+2016/09/18 06:33:37 weibo_id 1
+2016/09/18 06:33:37 weibo gua
+2016/09/18 06:33:37 w < Weibo
+created_time: (2016/09/18 18:32:14)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbdd8>)
+weibo: (gua) 
+>
+
+2016/09/18 06:33:37 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fb208>)
+password: (123) 
+>
+
+2016/09/18 06:35:54 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 06:35:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 06:35:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 06:35:54 i.comments_num 2
+2016/09/18 06:38:17 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 06:38:17 t < Weibo
+created_time: (2016/09/18 18:38:17)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4588>)
+weibo: (gua) 
+>
+
+2016/09/18 06:38:24 form ImmutableMultiDict([('weibo', '122'), ('weibo_id', '1')])
+2016/09/18 06:38:24 weibo_id 1
+2016/09/18 06:38:24 weibo 122
+2016/09/18 06:38:24 w < Weibo
+created_time: (2016/09/18 18:38:17)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298fef0>)
+weibo: (122) 
+>
+
+2016/09/18 06:38:24 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a37e80>)
+password: (123) 
+>
+
+2016/09/18 06:38:30 form ImmutableMultiDict([('weibo', 'gua'), ('weibo_id', '1')])
+2016/09/18 06:38:30 weibo_id 1
+2016/09/18 06:38:30 weibo gua
+2016/09/18 06:38:30 w < Weibo
+created_time: (2016/09/18 18:38:17)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092987630>)
+weibo: (gua) 
+>
+
+2016/09/18 06:38:30 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929875f8>)
+password: (123) 
+>
+
+2016/09/18 06:38:43 form ImmutableMultiDict([('weibo', '瓜'), ('weibo_id', '1')])
+2016/09/18 06:38:43 weibo_id 1
+2016/09/18 06:38:43 weibo 瓜
+2016/09/18 06:38:43 w < Weibo
+created_time: (2016/09/18 18:38:17)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7d30>)
+weibo: (瓜) 
+>
+
+2016/09/18 06:38:43 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbe10>)
+password: (123) 
+>
+
+2016/09/18 06:40:32 form ImmutableMultiDict([('weibo', '瓜')])
+2016/09/18 06:40:32 t < Weibo
+created_time: (2016/09/18 18:40:32)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a030f0>)
+weibo: (瓜) 
+>
+
+2016/09/18 06:41:05 form ImmutableMultiDict([('weibo', '')])
+2016/09/18 06:41:05 t < Weibo
+created_time: (2016/09/18 18:41:05)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4dd8>)
+weibo: () 
+>
+
+2016/09/18 06:41:10 form ImmutableMultiDict([('weibo', 'duan')])
+2016/09/18 06:41:10 t < Weibo
+created_time: (2016/09/18 18:41:10)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4c50>)
+weibo: (duan) 
+>
+
+2016/09/18 06:41:17 form ImmutableMultiDict([('weibo', 'gua'), ('weibo_id', '1')])
+2016/09/18 06:41:17 weibo_id 1
+2016/09/18 06:41:17 weibo gua
+2016/09/18 06:41:17 w < Weibo
+created_time: (2016/09/18 18:41:10)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fba20>)
+weibo: (gua) 
+>
+
+2016/09/18 06:41:17 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbf98>)
+password: (123) 
+>
+
+登录成功
+2016/09/18 06:43:11 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 06:43:11 t < Weibo
+created_time: (2016/09/18 18:43:11)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c77b8>)
+weibo: (gua) 
+>
+
+2016/09/18 06:43:16 form ImmutableMultiDict([('weibo', '123'), ('weibo_id', '1')])
+2016/09/18 06:43:16 weibo_id 1
+2016/09/18 06:43:16 weibo 123
+2016/09/18 06:43:16 w < Weibo
+created_time: (2016/09/18 18:43:11)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092f31da0>)
+weibo: (123) 
+>
+
+2016/09/18 06:43:16 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092f318d0>)
+password: (123) 
+>
+
+2016/09/18 06:43:23 form ImmutableMultiDict([('weibo', 'gua'), ('weibo_id', '1')])
+2016/09/18 06:43:23 weibo_id 1
+2016/09/18 06:43:23 weibo gua
+2016/09/18 06:43:23 w < Weibo
+created_time: (2016/09/18 18:43:11)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7fd0>)
+weibo: (gua) 
+>
+
+2016/09/18 06:43:23 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a03cc0>)
+password: (123) 
+>
+
+2016/09/18 06:45:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 06:45:11 i.comments_num 0
+登录成功
+2016/09/18 08:46:27 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 08:46:27 t < Weibo
+created_time: (2016/09/18 20:46:27)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4e80>)
+weibo: (gua) 
+>
+
+2016/09/18 08:46:40 form ImmutableMultiDict([('weibo', 'hello'), ('weibo_id', '1')])
+2016/09/18 08:46:40 weibo_id 1
+2016/09/18 08:46:40 weibo hello
+2016/09/18 08:46:40 w < Weibo
+created_time: (2016/09/18 20:46:27)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a377f0>)
+weibo: (hello) 
+>
+
+2016/09/18 08:46:40 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fb278>)
+password: (123) 
+>
+
+2016/09/18 08:46:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 08:46:46 i.comments_num 0
+2016/09/18 08:46:48 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 08:46:48 i.comments_num 0
+2016/09/18 08:49:37 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 08:49:37 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 08:49:37 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 08:49:37 i.comments_num 2
+2016/09/18 08:51:22 form ImmutableMultiDict([('weibo', '微博')])
+2016/09/18 08:51:22 t < Weibo
+created_time: (2016/09/18 20:51:22)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a37550>)
+weibo: (微博) 
+>
+
+2016/09/18 08:51:27 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 08:51:27 t < Weibo
+created_time: (2016/09/18 20:51:27)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929aff28>)
+weibo: (gua) 
+>
+
+2016/09/18 08:51:34 form ImmutableMultiDict([('weibo', '微博'), ('weibo_id', '1')])
+2016/09/18 08:51:34 weibo_id 1
+2016/09/18 08:51:34 weibo 微博
+2016/09/18 08:51:34 w < Weibo
+created_time: (2016/09/18 20:51:27)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298ff98>)
+weibo: (微博) 
+>
+
+2016/09/18 08:51:34 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929b1908>)
+password: (123) 
+>
+
+2016/09/18 08:52:53 form ImmutableMultiDict([('weibo', '微博'), ('weibo_id', '1')])
+2016/09/18 08:52:53 weibo_id 1
+2016/09/18 08:52:53 weibo 微博
+2016/09/18 08:52:53 w < Weibo
+created_time: (2016/09/18 20:51:27)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092987cf8>)
+weibo: (微博) 
+>
+
+2016/09/18 08:52:53 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092996048>)
+password: (123) 
+>
+
+2016/09/18 08:53:17 form ImmutableMultiDict([('weibo', '微博'), ('weibo_id', '1')])
+2016/09/18 08:53:17 weibo_id 1
+2016/09/18 08:53:17 weibo 微博
+2016/09/18 08:53:17 w < Weibo
+created_time: (2016/09/18 20:51:27)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afcc0>)
+weibo: (微博) 
+>
+
+2016/09/18 08:53:17 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929af780>)
+password: (123) 
+>
+
+登录成功
+2016/09/18 08:54:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 08:54:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 08:54:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 08:54:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 08:54:05 i.comments_num 3
+2016/09/18 08:54:33 form ImmutableMultiDict([('weibo', 'hello')])
+2016/09/18 08:54:33 t < Weibo
+created_time: (2016/09/18 20:54:33)
+comment: ()
+name: (duan)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c77f0>)
+weibo: (hello) 
+>
+
+登录成功
+2016/09/18 09:00:10 form ImmutableMultiDict([('weibo', 'hello')])
+2016/09/18 09:00:10 t < Weibo
+created_time: (2016/09/18 21:00:10)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7080>)
+weibo: (hello) 
+>
+
+2016/09/18 09:00:17 form ImmutableMultiDict([('weibo', 'gua'), ('weibo_id', '1')])
+2016/09/18 09:00:17 weibo_id 1
+2016/09/18 09:00:17 weibo gua
+2016/09/18 09:00:17 w < Weibo
+created_time: (2016/09/18 21:00:10)
+id: (1)
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4e80>)
+weibo: (gua) 
+>
+
+2016/09/18 09:00:17 u < User
+created_time: (1474121927)
+id: (1)
+username: (gua)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a373c8>)
+password: (123) 
+>
+
+登录成功
+登录失败
+登录成功
+登录成功
+登录成功
+2016/09/18 09:02:25 form ImmutableMultiDict([('weibo', '水一发')])
+2016/09/18 09:02:25 t < Weibo
+created_time: (2016/09/18 21:02:25)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afac8>)
+weibo: (水一发) 
+>
+
+2016/09/18 09:02:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:25 i.comments_num 0
+2016/09/18 09:02:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:31 i.comments_num 0
+2016/09/18 09:02:39 form ImmutableMultiDict([('weibo', 'hhh')])
+2016/09/18 09:02:39 t < Weibo
+created_time: (2016/09/18 21:02:39)
+comment: ()
+name: (guaaaa)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d4828>)
+weibo: (hhh) 
+>
+
+2016/09/18 09:02:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:46 i.comments_num 0
+2016/09/18 09:02:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:46 i.comments_num 0
+2016/09/18 09:02:48 form ImmutableMultiDict([('weibo', 'hhhhh'), ('weibo_id', '2')])
+2016/09/18 09:02:48 weibo_id 2
+2016/09/18 09:02:48 weibo hhhhh
+2016/09/18 09:02:48 w < Weibo
+created_time: (2016/09/18 21:02:39)
+id: (2)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+comment: (SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id)
+name: (guaaaa)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298f080>)
+weibo: (hhhhh)
+comments_num: (0) 
+>
+
+2016/09/18 09:02:48 u < User
+created_time: (1474203732)
+id: (4)
+username: (guaaaa)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbf60>)
+password: (123) 
+>
+
+2016/09/18 09:02:54 form ImmutableMultiDict([('weibo', 'hhh')])
+2016/09/18 09:02:54 t < Weibo
+created_time: (2016/09/18 21:02:54)
+comment: ()
+name: (guaaaa)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929969b0>)
+weibo: (hhh) 
+>
+
+2016/09/18 09:02:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:56 i.comments_num 0
+2016/09/18 09:02:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:56 i.comments_num 0
+2016/09/18 09:02:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:56 i.comments_num 0
+2016/09/18 09:02:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:59 i.comments_num 0
+2016/09/18 09:02:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:59 i.comments_num 0
+2016/09/18 09:02:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:02:59 i.comments_num 0
+2016/09/18 09:03:08 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:09 i.comments_num 0
+2016/09/18 09:03:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:11 i.comments_num 0
+2016/09/18 09:03:15 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:15 i.comments_num 0
+2016/09/18 09:03:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:25 i.comments_num 0
+2016/09/18 09:03:29 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:29 i.comments_num 0
+登录成功
+2016/09/18 09:03:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:46 i.comments_num 0
+登录成功
+2016/09/18 09:03:52 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:03:52 i.comments_num 0
+2016/09/18 09:03:54 form ImmutableMultiDict([('weibo', '123')])
+2016/09/18 09:03:54 t < Weibo
+created_time: (2016/09/18 21:03:54)
+comment: ()
+name: (123)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929874e0>)
+weibo: (123) 
+>
+
+2016/09/18 09:04:05 form ImmutableMultiDict([('weibo', '4444444'), ('weibo_id', '2')])
+2016/09/18 09:04:05 weibo_id 2
+2016/09/18 09:04:05 weibo 4444444
+2016/09/18 09:04:05 w < Weibo
+created_time: (2016/09/18 21:03:54)
+id: (2)
+name: (123)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afef0>)
+weibo: (4444444) 
+>
+
+2016/09/18 09:04:05 u < User
+created_time: (1474203812)
+id: (5)
+username: (123)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092f560b8>)
+password: (123) 
+>
+
+2016/09/18 09:04:13 form ImmutableMultiDict([('weibo', '水一发2222'), ('weibo_id', '1')])
+2016/09/18 09:04:13 weibo_id 1
+2016/09/18 09:04:13 weibo 水一发2222
+2016/09/18 09:04:13 error
+2016/09/18 09:04:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:04:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:33 i.comments_num 1
+2016/09/18 09:04:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:04:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:33 i.comments_num 2
+2016/09/18 09:04:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:04:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:45 i.comments_num 1
+2016/09/18 09:04:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:04:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:04:45 i.comments_num 2
+2016/09/18 09:05:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:05:25 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:25 i.comments_num 1
+2016/09/18 09:05:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:05:25 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:25 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:25 i.comments_num 2
+登录成功
+2016/09/18 09:05:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:05:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:58 i.comments_num 1
+2016/09/18 09:05:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:05:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:05:58 i.comments_num 2
+登录成功
+2016/09/18 09:06:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:06:53 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:06:53 i.comments_num 1
+2016/09/18 09:06:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:06:53 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:06:53 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:06:53 i.comments_num 2
+2016/09/18 09:07:01 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:07:01 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:01 i.comments_num 1
+2016/09/18 09:07:01 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:07:01 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:01 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:01 i.comments_num 2
+2016/09/18 09:07:20 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:07:20 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:20 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:20 i.comments_num 2
+2016/09/18 09:07:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:07:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:07:26 i.comments_num 2
+2016/09/18 09:08:29 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:29 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:29 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:29 i.comments_num 2
+2016/09/18 09:08:43 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:43 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:43 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:43 i.comments_num 2
+2016/09/18 09:08:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:45 i.comments_num 2
+2016/09/18 09:08:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:50 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:50 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:50 i.comments_num 2
+2016/09/18 09:08:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:51 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:51 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:51 i.comments_num 2
+2016/09/18 09:08:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:55 i.comments_num 2
+2016/09/18 09:08:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:08:59 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:59 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:08:59 i.comments_num 2
+登录成功
+2016/09/18 09:09:29 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:09:29 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:29 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:29 i.comments_num 2
+2016/09/18 09:09:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:09:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:30 i.comments_num 2
+2016/09/18 09:09:43 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:09:43 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:43 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:43 i.comments_num 2
+登录成功
+2016/09/18 09:09:52 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:09:52 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:52 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:09:52 i.comments_num 2
+登录成功
+登录成功
+2016/09/18 09:10:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:10:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:10:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:10:05 i.comments_num 2
+2016/09/18 09:10:12 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:10:12 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:10:12 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:10:12 i.comments_num 2
+2016/09/18 09:10:30 form ImmutableMultiDict([('weibo', '不错呀 小伙砸')])
+2016/09/18 09:10:30 t < Weibo
+created_time: (2016/09/18 21:10:30)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929b27f0>)
+weibo: (不错呀 小伙砸) 
+>
+
+2016/09/18 09:10:38 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:10:38 i.comments_num 0
+2016/09/18 09:10:48 form ImmutableMultiDict([('weibo', '我好像把瓜的评论删了')])
+2016/09/18 09:10:48 t < Weibo
+created_time: (2016/09/18 21:10:48)
+comment: ()
+name: (ruo)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929b2748>)
+weibo: (我好像把瓜的评论删了) 
+>
+
+2016/09/18 09:10:55 form ImmutableMultiDict([('weibo', '2333')])
+2016/09/18 09:10:55 t < Weibo
+created_time: (2016/09/18 21:10:55)
+comment: ()
+name: (ruo)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092987978>)
+weibo: (2333) 
+>
+
+2016/09/18 09:10:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:10:58 i.comments_num 0
+2016/09/18 09:10:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:10:58 i.comments_num 0
+登录成功
+2016/09/18 09:11:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:09 i.comments_num 0
+2016/09/18 09:11:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:09 i.comments_num 0
+2016/09/18 09:11:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:11 i.comments_num 0
+2016/09/18 09:11:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:11 i.comments_num 0
+2016/09/18 09:11:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:27 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:27 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:27 i.comments_num 2
+2016/09/18 09:11:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:27 i.comments_num 0
+2016/09/18 09:11:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:30 i.comments_num 2
+2016/09/18 09:11:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:30 i.comments_num 0
+2016/09/18 09:11:36 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:36 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:36 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:36 i.comments_num 2
+2016/09/18 09:11:36 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:36 i.comments_num 0
+2016/09/18 09:11:54 form ImmutableMultiDict([('weibo', '水一发～')])
+2016/09/18 09:11:54 t < Weibo
+created_time: (2016/09/18 21:11:54)
+comment: ()
+name: (ttt)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092959438>)
+weibo: (水一发～) 
+>
+
+2016/09/18 09:11:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:55 i.comments_num 0
+2016/09/18 09:11:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:55 i.comments_num 2
+2016/09/18 09:11:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:55 i.comments_num 0
+2016/09/18 09:11:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:59 i.comments_num 0
+2016/09/18 09:11:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:59 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:59 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:11:59 i.comments_num 2
+2016/09/18 09:11:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:11:59 i.comments_num 0
+2016/09/18 09:12:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:09 i.comments_num 0
+2016/09/18 09:12:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:09 i.comments_num 0
+登录成功
+2016/09/18 09:12:14 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:14 i.comments_num 0
+2016/09/18 09:12:23 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:23 i.comments_num 0
+2016/09/18 09:12:24 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:24 i.comments_num 0
+2016/09/18 09:12:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:25 i.comments_num 0
+2016/09/18 09:12:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:26 i.comments_num 0
+2016/09/18 09:12:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:27 i.comments_num 0
+2016/09/18 09:12:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:27 i.comments_num 0
+2016/09/18 09:12:27 form ImmutableMultiDict([('weibo', '水一发'), ('weibo_id', '3')])
+2016/09/18 09:12:27 weibo_id 3
+2016/09/18 09:12:27 weibo 水一发
+2016/09/18 09:12:27 w < Weibo
+created_time: (2016/09/18 21:11:54)
+id: (3)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+comment: (SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id)
+name: (ttt)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298f748>)
+weibo: (水一发)
+comments_num: (0) 
+>
+
+2016/09/18 09:12:27 u < User
+created_time: (1474204176)
+id: (8)
+username: (ttt)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a37278>)
+password: (123) 
+>
+
+2016/09/18 09:12:28 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:28 i.comments_num 0
+2016/09/18 09:12:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:30 i.comments_num 0
+2016/09/18 09:12:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:31 i.comments_num 0
+2016/09/18 09:12:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:33 i.comments_num 0
+2016/09/18 09:12:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:33 i.comments_num 0
+2016/09/18 09:12:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:34 i.comments_num 0
+2016/09/18 09:12:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:34 i.comments_num 0
+2016/09/18 09:12:44 form ImmutableMultiDict([('weibo', '不错')])
+2016/09/18 09:12:44 t < Weibo
+created_time: (2016/09/18 21:12:44)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7630>)
+weibo: (不错) 
+>
+
+2016/09/18 09:12:47 form ImmutableMultiDict([('weibo', '好棒呀'), ('weibo_id', '3')])
+2016/09/18 09:12:47 weibo_id 3
+2016/09/18 09:12:47 weibo 好棒呀
+2016/09/18 09:12:47 w < Weibo
+created_time: (2016/09/18 21:11:54)
+id: (3)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+comment: (SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id)
+name: (ttt)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298f748>)
+weibo: (好棒呀)
+comments_num: (0) 
+>
+
+2016/09/18 09:12:47 u < User
+created_time: (1474204176)
+id: (8)
+username: (ttt)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afe48>)
+password: (123) 
+>
+
+2016/09/18 09:12:48 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:48 i.comments_num 0
+2016/09/18 09:12:54 form ImmutableMultiDict([('weibo', '不错啊')])
+2016/09/18 09:12:54 t < Weibo
+created_time: (2016/09/18 21:12:54)
+comment: ()
+name: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f609298f898>)
+weibo: (不错啊) 
+>
+
+2016/09/18 09:12:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:55 i.comments_num 0
+2016/09/18 09:12:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:12:55 i.comments_num 0
+2016/09/18 09:13:20 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:20 i.comments_num 0
+2016/09/18 09:13:20 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:20 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:13:20 i.comments_num 1
+2016/09/18 09:13:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:45 i.comments_num 0
+2016/09/18 09:13:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:13:45 i.comments_num 1
+2016/09/18 09:13:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:56 i.comments_num 0
+2016/09/18 09:13:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:56 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:13:56 i.comments_num 1
+2016/09/18 09:13:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:59 i.comments_num 0
+2016/09/18 09:13:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:13:59 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:13:59 i.comments_num 1
+2016/09/18 09:14:59 form ImmutableMultiDict([('weibo', '再水一发～')])
+2016/09/18 09:14:59 t < Weibo
+created_time: (2016/09/18 21:14:59)
+comment: ()
+name: (ttt)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a377f0>)
+weibo: (再水一发～) 
+>
+
+2016/09/18 09:15:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:34 i.comments_num 0
+2016/09/18 09:15:42 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:43 i.comments_num 0
+2016/09/18 09:15:44 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:44 i.comments_num 0
+2016/09/18 09:15:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:45 i.comments_num 0
+2016/09/18 09:15:47 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:47 i.comments_num 0
+2016/09/18 09:15:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:50 i.comments_num 0
+2016/09/18 09:15:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:51 i.comments_num 0
+2016/09/18 09:15:57 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:15:57 i.comments_num 0
+2016/09/18 09:16:02 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:16:02 i.comments_num 0
+2016/09/18 09:16:03 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:16:03 i.comments_num 0
+2016/09/18 09:16:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:16:41 i.comments_num 0
+2016/09/18 09:16:44 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:16:44 i.comments_num 0
+2016/09/18 09:16:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:16:46 i.comments_num 0
+登录失败
+登录成功
+2016/09/18 09:17:29 form ImmutableMultiDict([('weibo', '水一发')])
+2016/09/18 09:17:29 t < Weibo
+created_time: (2016/09/18 21:17:29)
+comment: ()
+name: (test)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092f560b8>)
+weibo: (水一发) 
+>
+
+2016/09/18 09:17:38 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:17:38 i.comments_num 0
+登录成功
+2016/09/18 09:17:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:17:50 i.comments_num 0
+2016/09/18 09:17:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:17:51 i.comments_num 0
+2016/09/18 09:18:00 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:18:00 i.comments_num 0
+2016/09/18 09:18:03 form ImmutableMultiDict([('weibo', '主页未写好 == ')])
+2016/09/18 09:18:03 t < Weibo
+created_time: (2016/09/18 21:18:03)
+comment: ()
+name: (哈哈哈哈)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbeb8>)
+weibo: (主页未写好 == ) 
+>
+
+2016/09/18 09:18:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:18:25 i.comments_num 0
+2016/09/18 09:18:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:18:27 i.comments_num 0
+登录成功
+2016/09/18 09:19:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:19:09 i.comments_num 0
+2016/09/18 09:19:14 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:19:14 i.comments_num 0
+2016/09/18 09:19:21 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:19:21 i.comments_num 0
+2016/09/18 09:19:29 form ImmutableMultiDict([('weibo', 'hahahaha'), ('weibo_id', '2')])
+2016/09/18 09:19:29 weibo_id 2
+2016/09/18 09:19:29 weibo hahahaha
+2016/09/18 09:19:29 error
+2016/09/18 09:19:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:19:30 i.comments_num 0
+登录失败
+登录失败
+登录失败
+登录成功
+2016/09/18 09:27:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:27:30 i.comments_num 0
+登录成功
+2016/09/18 09:29:04 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:04 i.comments_num 0
+2016/09/18 09:29:06 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:06 i.comments_num 0
+登录成功
+2016/09/18 09:29:10 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:10 i.comments_num 0
+2016/09/18 09:29:16 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:16 i.comments_num 0
+2016/09/18 09:29:42 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:42 i.comments_num 0
+2016/09/18 09:29:52 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:29:52 i.comments_num 0
+登录成功
+2016/09/18 09:31:29 form ImmutableMultiDict([('weibo', 'O_O')])
+2016/09/18 09:31:29 t < Weibo
+created_time: (2016/09/18 21:31:29)
+comment: ()
+name: (GyonGyon)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929af6d8>)
+weibo: (O_O) 
+>
+
+2016/09/18 09:31:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:31:31 i.comments_num 0
+2016/09/18 09:31:39 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:31:39 i.comments_num 0
+2016/09/18 09:32:05 form ImmutableMultiDict([('weibo', '没人？')])
+2016/09/18 09:32:05 t < Weibo
+created_time: (2016/09/18 21:32:05)
+comment: ()
+name: (GyonGyon)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afc18>)
+weibo: (没人？) 
+>
+
+2016/09/18 09:32:15 form ImmutableMultiDict([('weibo', '这...是都被删了？')])
+2016/09/18 09:32:15 t < Weibo
+created_time: (2016/09/18 21:32:15)
+comment: ()
+name: (chandler_tang)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbe10>)
+weibo: (这...是都被删了？) 
+>
+
+2016/09/18 09:32:47 form ImmutableMultiDict([('weibo', 'O_O扥森 扥扥扥扥扥扥'), ('weibo_id', '1')])
+2016/09/18 09:32:47 weibo_id 1
+2016/09/18 09:32:47 weibo O_O扥森 扥扥扥扥扥扥
+2016/09/18 09:32:47 w < Weibo
+created_time: (2016/09/18 21:31:29)
+id: (1)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+comment: (SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id)
+name: (GyonGyon)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929d49b0>)
+weibo: (O_O扥森 扥扥扥扥扥扥)
+comments_num: (0) 
+>
+
+2016/09/18 09:32:47 u < User
+created_time: (1474205466)
+id: (15)
+username: (GyonGyon)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929fbfd0>)
+password: (920213) 
+>
+
+2016/09/18 09:32:48 form ImmutableMultiDict([('weibo', '不能大于九个字符')])
+2016/09/18 09:32:48 t < Weibo
+created_time: (2016/09/18 21:32:48)
+comment: ()
+name: (chandler_tang)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929afb70>)
+weibo: (不能大于九个字符) 
+>
+
+2016/09/18 09:32:54 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:54 i.comments_num 0
+2016/09/18 09:32:54 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:54 i.comments_num 8
+2016/09/18 09:32:54 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:54 i.comments_num 0
+2016/09/18 09:32:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:58 i.comments_num 0
+2016/09/18 09:32:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:32:58 i.comments_num 8
+2016/09/18 09:32:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:32:58 i.comments_num 0
+2016/09/18 09:33:27 form ImmutableMultiDict([('weibo', '都被删了？')])
+2016/09/18 09:33:27 t < Weibo
+created_time: (2016/09/18 21:33:27)
+comment: ()
+name: (chandler_tang)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a37e10>)
+weibo: (都被删了？) 
+>
+
+2016/09/18 09:33:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:33:31 i.comments_num 0
+2016/09/18 09:33:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:33:34 i.comments_num 0
+2016/09/18 09:33:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:33:46 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:33:46 i.comments_num 1
+2016/09/18 09:33:48 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:33:48 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:33:48 i.comments_num 1
+2016/09/18 09:33:52 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:33:52 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:33:52 i.comments_num 1
+2016/09/18 09:34:04 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:34:04 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:34:04 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:34:04 i.comments_num 2
+2016/09/18 09:34:17 form ImmutableMultiDict([('weibo', 'Weibo')])
+2016/09/18 09:34:17 t < Weibo
+created_time: (2016/09/18 21:34:17)
+comment: ()
+name: (GyonGyon)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a030b8>)
+weibo: (Weibo) 
+>
+
+2016/09/18 09:34:21 form ImmutableMultiDict([('weibo', 'Weibo')])
+2016/09/18 09:34:21 t < Weibo
+created_time: (2016/09/18 21:34:21)
+comment: ()
+name: (GyonGyon)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929af390>)
+weibo: (Weibo) 
+>
+
+2016/09/18 09:34:23 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:34:23 i.comments_num 0
+2016/09/18 09:34:23 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:34:23 i.comments_num 0
+2016/09/18 09:34:23 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:34:23 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:34:23 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:34:23 i.comments_num 2
+2016/09/18 09:35:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:32 i.comments_num 0
+2016/09/18 09:35:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:32 i.comments_num 0
+2016/09/18 09:35:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:32 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:35:32 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:35:32 i.comments_num 2
+2016/09/18 09:35:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:56 i.comments_num 0
+2016/09/18 09:35:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:56 i.comments_num 0
+2016/09/18 09:35:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:35:56 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:35:56 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:35:56 i.comments_num 2
+2016/09/18 09:36:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:36:05 i.comments_num 0
+2016/09/18 09:36:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:36:05 i.comments_num 0
+2016/09/18 09:36:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:36:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:36:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:36:05 i.comments_num 2
+2016/09/18 09:38:29 form ImmutableMultiDict([('weibo', '一个被玩坏的微博')])
+2016/09/18 09:38:29 t < Weibo
+created_time: (2016/09/18 21:38:29)
+comment: ()
+name: (chandler_tang)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6094ac90f0>)
+weibo: (一个被玩坏的微博) 
+>
+
+2016/09/18 09:38:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:38:33 i.comments_num 0
+2016/09/18 09:38:48 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:38:48 i.comments_num 0
+2016/09/18 09:39:47 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:39:47 i.comments_num 0
+登录成功
+2016/09/18 09:40:52 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:40:52 i.comments_num 0
+登录成功
+2016/09/18 09:41:02 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:02 i.comments_num 0
+2016/09/18 09:41:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:05 i.comments_num 0
+2016/09/18 09:41:08 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:08 i.comments_num 0
+2016/09/18 09:41:19 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:19 i.comments_num 0
+2016/09/18 09:41:25 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:25 i.comments_num 0
+登录成功
+2016/09/18 09:41:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:35 i.comments_num 0
+2016/09/18 09:41:48 form ImmutableMultiDict([('weibo', '.....')])
+2016/09/18 09:41:48 t < Weibo
+created_time: (2016/09/18 21:41:48)
+comment: ()
+name: (bao)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929af0b8>)
+weibo: (.....) 
+>
+
+2016/09/18 09:41:56 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:56 i.comments_num 0
+2016/09/18 09:41:57 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:41:57 i.comments_num 0
+2016/09/18 09:42:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:42:46 i.comments_num 0
+2016/09/18 09:44:38 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:44:38 i.comments_num 0
+2016/09/18 09:45:00 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:45:00 i.comments_num 0
+2016/09/18 09:45:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:45:41 i.comments_num 0
+2016/09/18 09:45:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:45:45 i.comments_num 0
+2016/09/18 09:45:59 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:45:59 i.comments_num 0
+2016/09/18 09:46:04 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id[2016-09-18 10:02:03 -0400] [22352] [INFO] Parent changed, shutting down: <Worker 22352>
+[2016-09-18 10:02:03 -0400] [22352] [INFO] Worker exiting (pid: 22352)
+
+2016/09/18 09:46:04 i.comments_num 0
+2016/09/18 09:46:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:46:26 i.comments_num 0
+2016/09/18 09:46:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:46:27 i.comments_num 0
+2016/09/18 09:46:57 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:46:57 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:46:57 i.comments_num 1
+2016/09/18 09:49:17 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:49:17 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:49:17 i.comments_num 1
+2016/09/18 09:49:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:49:41 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:49:41 i.comments_num 1
+登录成功
+2016/09/18 09:51:20 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:51:20 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:51:20 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:51:20 i.comments_num 2
+2016/09/18 09:52:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:52:11 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:11 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:11 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:11 i.comments_num 3
+2016/09/18 09:52:22 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:52:22 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:22 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:22 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:22 i.comments_num 3
+2016/09/18 09:52:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:52:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 09:52:26 i.comments_num 3
+登录成功
+2016/09/18 09:53:59 form ImmutableMultiDict([('weibo', '2333')])
+2016/09/18 09:53:59 t < Weibo
+created_time: (2016/09/18 21:53:59)
+comment: ()
+name: (horla)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092959748>)
+weibo: (2333) 
+>
+
+2016/09/18 09:54:07 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:54:07 i.comments_num 0
+2016/09/18 09:54:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:54:11 i.comments_num 0
+2016/09/18 09:54:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:54:33 i.comments_num 0
+2016/09/18 09:54:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:54:35 i.comments_num 0
+2016/09/18 09:55:20 form ImmutableMultiDict([('weibo', '23333333'), ('weibo_id', '1')])
+2016/09/18 09:55:20 weibo_id 1
+2016/09/18 09:55:20 weibo 23333333
+2016/09/18 09:55:20 w < Weibo
+created_time: (2016/09/18 21:53:59)
+id: (1)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+comment: (SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id)
+name: (horla)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f60929c7320>)
+weibo: (23333333)
+comments_num: (0) 
+>
+
+2016/09/18 09:55:20 u < User
+created_time: (1474206802)
+id: (19)
+username: (horla)
+avatar: (http://vip.cocode.cc/uploads/avatar/default.png)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f6092a37ef0>)
+password: (123) 
+>
+
+2016/09/18 09:55:27 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:55:27 i.comments_num 0
+2016/09/18 09:55:37 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:55:37 i.comments_num 0
+2016/09/18 09:55:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:55:41 i.comments_num 0
+2016/09/18 09:56:20 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 09:56:20 i.comments_num 0
+[2016-09-18 10:08:53 -0400] [23772] [INFO] Starting gunicorn 19.6.0
+[2016-09-18 10:08:53 -0400] [23772] [INFO] Listening at: http://127.0.0.1:3000 (23772)
+[2016-09-18 10:08:53 -0400] [23772] [INFO] Using worker: sync
+[2016-09-18 10:08:53 -0400] [23775] [INFO] Booting worker with pid: 23775
+[2016-09-18 10:11:10,066] ERROR in app: Exception on /api/weibo/update [POST]
+Traceback (most recent call last):
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1988, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1641, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1544, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1639, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/www/weibo/venv/lib/python3.4/site-packages/flask/app.py", line 1625, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/www/weibo/api.py", line 69, in update
+    message = w.error_message()
+AttributeError: 'NoneType' object has no attribute 'error_message'
+2016/09/18 10:09:18 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 10:09:18 t < Weibo
+created_time: (2016/09/18 22:09:18)
+weibo: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bccda58>)
+name: (duan)
+comment: () 
+>
+
+2016/09/18 10:09:23 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:09:23 weibo_id 1
+2016/09/18 10:09:23 weibo_user duan
+2016/09/18 10:09:27 form ImmutableMultiDict([('weibo', 'gua')])
+2016/09/18 10:09:27 t < Weibo
+created_time: (2016/09/18 22:09:27)
+weibo: (gua)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bccd748>)
+name: (duan)
+comment: () 
+>
+
+登录成功
+2016/09/18 10:09:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:09:53 i.comments_num 0
+2016/09/18 10:09:57 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:09:57 weibo_id 1
+2016/09/18 10:09:57 weibo_user duan
+2016/09/18 10:09:57 error
+2016/09/18 10:10:00 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:10:00 weibo_id 1
+2016/09/18 10:10:00 weibo_user duan
+2016/09/18 10:10:00 error
+2016/09/18 10:10:06 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', 'gua')])
+2016/09/18 10:10:06 weibo_id 1
+2016/09/18 10:10:06 weibo gua
+2016/09/18 10:10:06 error
+2016/09/18 10:10:10 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', 'gua')])
+2016/09/18 10:10:10 weibo_id 1
+2016/09/18 10:10:10 weibo gua
+2016/09/18 10:10:10 error
+2016/09/18 10:10:19 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', 'hello')])
+2016/09/18 10:10:19 weibo_id 1
+2016/09/18 10:10:19 weibo hello
+2016/09/18 10:10:19 error
+2016/09/18 10:10:27 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', 'gua')])
+2016/09/18 10:10:27 weibo_id 1
+2016/09/18 10:10:27 weibo gua
+2016/09/18 10:10:27 error
+2016/09/18 10:10:29 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:10:29 weibo_id 1
+2016/09/18 10:10:29 weibo_user duan
+2016/09/18 10:10:29 error
+2016/09/18 10:10:34 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:10:34 i.comments_num 0
+2016/09/18 10:10:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:10:46 i.comments_num 0
+2016/09/18 10:10:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:10:53 i.comments_num 0
+2016/09/18 10:10:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:10:58 i.comments_num 0
+2016/09/18 10:10:58 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:10:58 weibo_id 1
+2016/09/18 10:10:58 weibo_user duan
+2016/09/18 10:10:58 error
+2016/09/18 10:11:00 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:11:00 weibo_id 1
+2016/09/18 10:11:00 weibo_user duan
+2016/09/18 10:11:00 error
+2016/09/18 10:11:01 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:11:01 weibo_id 1
+2016/09/18 10:11:01 weibo_user duan
+2016/09/18 10:11:10 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', 'hhh')])
+2016/09/18 10:11:10 weibo_id 1
+2016/09/18 10:11:10 weibo hhh
+2016/09/18 10:11:10 error
+2016/09/18 10:11:17 form ImmutableMultiDict([('weibo', '233333')])
+2016/09/18 10:11:17 t < Weibo
+created_time: (2016/09/18 22:11:17)
+weibo: (233333)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bbdc0b8>)
+name: (ttt)
+comment: () 
+>
+
+2016/09/18 10:11:19 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:11:19 i.comments_num 0
+2016/09/18 10:11:27 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', '235467564')])
+2016/09/18 10:11:27 weibo_id 1
+2016/09/18 10:11:27 weibo 235467564
+2016/09/18 10:11:27 error
+2016/09/18 10:11:43 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:11:43 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:11:43 i.comments_num 1
+2016/09/18 10:11:46 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:11:46 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:11:46 i.comments_num 1
+2016/09/18 10:11:49 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'ttt')])
+2016/09/18 10:11:49 weibo_id 1
+2016/09/18 10:11:49 weibo_user ttt
+2016/09/18 10:11:49 error
+2016/09/18 10:11:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:11:53 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:11:53 i.comments_num 1
+2016/09/18 10:11:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:11:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:11:58 i.comments_num 1
+2016/09/18 10:12:00 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'duan')])
+2016/09/18 10:12:00 weibo_id 1
+2016/09/18 10:12:00 weibo_user duan
+2016/09/18 10:12:00 error
+2016/09/18 10:12:29 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:12:29 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:12:29 i.comments_num 1
+2016/09/18 10:12:42 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'ttt')])
+2016/09/18 10:12:42 weibo_id 1
+2016/09/18 10:12:42 weibo_user ttt
+2016/09/18 10:12:42 error
+2016/09/18 10:12:46 form ImmutableMultiDict([('weiboId', '1'), ('weiboUser', 'ttt')])
+2016/09/18 10:12:46 weibo_id 1
+2016/09/18 10:12:46 weibo_user ttt
+2016/09/18 10:12:46 error
+2016/09/18 10:12:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:12:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:12:58 i.comments_num 1
+2016/09/18 10:13:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:13:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:13:05 i.comments_num 1
+2016/09/18 10:13:18 form ImmutableMultiDict([('weibo', '听说已经不能删除微博了')])
+2016/09/18 10:13:18 t < Weibo
+created_time: (2016/09/18 22:13:18)
+weibo: (听说已经不能删除微博了)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bba4358>)
+name: (chandler_tang)
+comment: () 
+>
+
+2016/09/18 10:13:38 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:13:38 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:13:38 i.comments_num 1
+2016/09/18 10:13:45 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:13:45 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:13:45 i.comments_num 1
+2016/09/18 10:13:55 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', '233333')])
+2016/09/18 10:13:55 weibo_id 1
+2016/09/18 10:13:55 weibo 233333
+2016/09/18 10:13:55 error
+2016/09/18 10:14:21 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:14:21 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:14:21 i.comments_num 1
+2016/09/18 10:14:52 form ImmutableMultiDict([('weibo_id', '1'), ('weibo', '试试')])
+2016/09/18 10:14:52 weibo_id 1
+2016/09/18 10:14:52 weibo 试试
+2016/09/18 10:14:52 error
+2016/09/18 10:14:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:14:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:14:55 i.comments_num 1
+2016/09/18 10:14:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:14:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:14:58 i.comments_num 1
+2016/09/18 10:15:35 form ImmutableMultiDict([('weibo', '水一发')])
+2016/09/18 10:15:35 t < Weibo
+created_time: (2016/09/18 22:15:35)
+weibo: (水一发)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bbdcba8>)
+name: (chandler_tang)
+comment: () 
+>
+
+2016/09/18 10:15:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:15:41 i.comments_num 0
+2016/09/18 10:15:41 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:15:41 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:15:41 i.comments_num 1
+登录成功
+登录成功
+2016/09/18 10:16:18 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:16:18 i.comments_num 0
+2016/09/18 10:16:18 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:16:18 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:16:18 i.comments_num 1
+2016/09/18 10:16:29 form ImmutableMultiDict([('weibo', '水一下')])
+2016/09/18 10:16:29 t < Weibo
+created_time: (2016/09/18 22:16:29)
+weibo: (水一下)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bc75a58>)
+name: (onigiri)
+comment: () 
+>
+
+2016/09/18 10:17:21 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:17:21 i.comments_num 0
+2016/09/18 10:17:21 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:17:21 i.comments_num 0
+2016/09/18 10:17:21 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:17:21 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:17:21 i.comments_num 1
+2016/09/18 10:20:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:20:26 i.comments_num 0
+2016/09/18 10:20:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:20:26 i.comments_num 0
+2016/09/18 10:20:26 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:20:26 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:20:26 i.comments_num 1
+2016/09/18 10:23:47 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:47 i.comments_num 0
+2016/09/18 10:23:47 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:47 i.comments_num 0
+2016/09/18 10:23:47 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:47 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:23:47 i.comments_num 1
+2016/09/18 10:23:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:53 i.comments_num 0
+2016/09/18 10:23:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:53 i.comments_num 0
+2016/09/18 10:23:53 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:23:53 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:23:53 i.comments_num 1
+2016/09/18 10:26:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:26:33 i.comments_num 0
+2016/09/18 10:26:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:26:33 i.comments_num 0
+2016/09/18 10:26:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:26:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:26:33 i.comments_num 1
+2016/09/18 10:34:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:55 i.comments_num 0
+2016/09/18 10:34:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:55 i.comments_num 0
+2016/09/18 10:34:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:34:55 i.comments_num 1
+2016/09/18 10:34:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:58 i.comments_num 0
+2016/09/18 10:34:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:58 i.comments_num 0
+2016/09/18 10:34:58 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:34:58 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:34:58 i.comments_num 1
+2016/09/18 10:35:42 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:35:42 i.comments_num 0
+2016/09/18 10:35:42 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:35:42 i.comments_num 0
+2016/09/18 10:35:42 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:35:42 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:35:42 i.comments_num 1
+2016/09/18 10:40:11 form ImmutableMultiDict([('weiboId', '3'), ('weiboUser', 'onigiri')])
+2016/09/18 10:40:11 weibo_id 3
+2016/09/18 10:40:11 weibo_user onigiri
+2016/09/18 10:40:11 error
+2016/09/18 10:40:14 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:14 i.comments_num 0
+2016/09/18 10:40:14 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:14 i.comments_num 0
+2016/09/18 10:40:14 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:14 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:40:14 i.comments_num 1
+2016/09/18 10:40:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:35 i.comments_num 0
+2016/09/18 10:40:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:35 i.comments_num 0
+2016/09/18 10:40:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:35 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:40:35 i.comments_num 1
+2016/09/18 10:40:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:50 i.comments_num 0
+2016/09/18 10:40:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:50 i.comments_num 0
+2016/09/18 10:40:50 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:40:50 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:40:50 i.comments_num 1
+2016/09/18 10:43:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:43:05 i.comments_num 1
+2016/09/18 10:43:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:05 i.comments_num 0
+2016/09/18 10:43:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:43:05 i.comments_num 1
+2016/09/18 10:43:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:43:33 i.comments_num 1
+2016/09/18 10:43:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:33 i.comments_num 0
+2016/09/18 10:43:33 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 10:43:33 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 10:43:33 i.comments_num 1
+登录成功
+2016/09/18 11:03:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:03:51 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:03:51 i.comments_num 1
+2016/09/18 11:03:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:03:51 i.comments_num 0
+2016/09/18 11:03:51 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:03:51 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:03:51 i.comments_num 1
+登录成功
+2016/09/18 11:16:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:11 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:11 i.comments_num 1
+2016/09/18 11:16:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:11 i.comments_num 0
+2016/09/18 11:16:11 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:11 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:11 i.comments_num 1
+2016/09/18 11:16:24 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:24 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:24 i.comments_num 1
+2016/09/18 11:16:24 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:24 i.comments_num 0
+2016/09/18 11:16:24 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:24 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:24 i.comments_num 1
+2016/09/18 11:16:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:30 i.comments_num 1
+2016/09/18 11:16:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:30 i.comments_num 0
+2016/09/18 11:16:30 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:16:30 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:16:30 i.comments_num 1
+2016/09/18 11:16:53 form ImmutableMultiDict([('weibo_id', '2'), ('weibo', '水一发（我也能编辑）')])
+2016/09/18 11:16:53 weibo_id 2
+2016/09/18 11:16:53 weibo 水一发（我也能编辑）
+2016/09/18 11:16:53 error
+2016/09/18 11:17:00 form ImmutableMultiDict([('weiboId', '2'), ('weiboUser', 'chandler_tang')])
+2016/09/18 11:17:00 weibo_id 2
+2016/09/18 11:17:00 weibo_user chandler_tang
+2016/09/18 11:17:00 error
+登录成功
+2016/09/18 11:18:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:09 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:18:09 i.comments_num 1
+2016/09/18 11:18:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:09 i.comments_num 0
+2016/09/18 11:18:09 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:09 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:18:09 i.comments_num 1
+2016/09/18 11:18:26 form ImmutableMultiDict([('weibo', 'gua的密码又是123。。。。。')])
+2016/09/18 11:18:26 t < Weibo
+created_time: (2016/09/18 23:18:26)
+weibo: (gua的密码又是123。。。。。)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bbdc8d0>)
+name: (gua)
+comment: () 
+>
+
+2016/09/18 11:18:33 form ImmutableMultiDict([('weibo', 'gua的密码又是123')])
+2016/09/18 11:18:33 t < Weibo
+created_time: (2016/09/18 23:18:33)
+weibo: (gua的密码又是123)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bbdcf28>)
+name: (gua)
+comment: () 
+>
+
+2016/09/18 11:18:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:35 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:18:35 i.comments_num 1
+2016/09/18 11:18:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:35 i.comments_num 0
+2016/09/18 11:18:35 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 11:18:35 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 11:18:35 i.comments_num 1
+2016/09/18 11:18:42 form ImmutableMultiDict([('weibo', 'gua密码又是123')])
+2016/09/18 11:18:42 t < Weibo
+created_time: (2016/09/18 23:18:42)
+weibo: (gua密码又是123)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bbdcf28>)
+name: (gua)
+comment: () 
+>
+
+2016/09/18 11:19:07 form ImmutableMultiDict([('weibo', '9个字说不完啊')])
+2016/09/18 11:19:07 t < Weibo
+created_time: (2016/09/18 23:19:07)
+weibo: (9个字说不完啊)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bba4358>)
+name: (gua)
+comment: () 
+>
+
+2016/09/18 11:19:31 form ImmutableMultiDict([('weibo', '我想水水水')])
+2016/09/18 11:19:31 t < Weibo
+created_time: (2016/09/18 23:19:31)
+weibo: (我想水水水)
+_sa_instance_state: (<sqlalchemy.orm.state.InstanceState object at 0x7f705bba4be0>)
+name: (gua)
+comment: () 
+>
+
+登录成功
+2016/09/18 18:35:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:35:05 i.comments_num 0
+2016/09/18 18:35:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:35:05 i.comments_num 0
+2016/09/18 18:35:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:35:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:35:05 i.comments_num 1
+2016/09/18 18:35:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:35:05 i.comments_num 0
+2016/09/18 18:35:05 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:35:05 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:35:05 i.comments_num 1
+登录成功
+2016/09/18 18:53:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:31 i.comments_num 0
+2016/09/18 18:53:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:31 i.comments_num 0
+2016/09/18 18:53:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:31 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:53:31 i.comments_num 1
+2016/09/18 18:53:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:31 i.comments_num 0
+2016/09/18 18:53:31 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:31 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:53:31 i.comments_num 1
+2016/09/18 18:53:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:55 i.comments_num 0
+2016/09/18 18:53:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:55 i.comments_num 0
+2016/09/18 18:53:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:53:55 i.comments_num 1
+2016/09/18 18:53:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:55 i.comments_num 0
+2016/09/18 18:53:55 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 18:53:55 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 18:53:55 i.comments_num 1
+登录成功
+登录成功
+2016/09/18 21:20:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 21:20:32 i.comments_num 0
+2016/09/18 21:20:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 21:20:32 i.comments_num 0
+2016/09/18 21:20:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 21:20:32 j.avatar http://vip.cocode.cc/uploads/avatar/default.png
+2016/09/18 21:20:32 i.comments_num 1
+2016/09/18 21:20:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id
+2016/09/18 21:20:32 i.comments_num 0
+2016/09/18 21:20:32 comment SELECT comments.id AS comments_id, comments.comment AS comments_comment, comments.name AS comments_name, comments.created_time AS comments_created_time, comments.weibo_id AS comments_weibo_id 
+FROM comments 
+WHERE :param_1 = comments.weibo_id

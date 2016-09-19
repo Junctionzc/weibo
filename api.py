@@ -72,16 +72,43 @@ def update():
     return json.dumps(r, ensure_ascii=False)
 
 
-@main.route('/weibo/delete/<int:weibo_id>', methods=['GET'])
-def delete(weibo_id):
-    w = Weibo.query.get(weibo_id)
-    for c in w.comments:
-        c.delete()
-    w.delete()
+# @main.route('/weibo/delete/<int:weibo_id>', methods=['GET'])
+# def delete(weibo_id):
+#     w = Weibo.query.get(weibo_id)
+#     for c in w.comments:
+#         c.delete()
+#     w.delete()
+#     r = {
+#         'success': True,
+#         'data': w.json(),
+#     }
+#     return json.dumps(r, ensure_ascii=False)
+@main.route('/weibo/delete', methods=['POST'])
+def delete():
+    form = request.form
+    log("form", form)
+    weibo_id = form.get('weiboId')
+    log("weibo_id", weibo_id)
+    weibo_user = form.get('weiboUser')
+    log("weibo_user", weibo_user)
     r = {
-        'success': True,
-        'data': w.json(),
+        'data': []
     }
+    u = current_user()
+    if weibo_user == u.username:
+        w = Weibo.query.get(weibo_id)
+        for c in w.comments:
+            c.delete()
+        w.delete()
+        r = {
+            'success': True,
+            'data': w.json(),
+        }
+    else:
+        log('error')
+        r['success'] = False
+        message = "删除失败，非本微博用户"
+        r['message'] = message
     return json.dumps(r, ensure_ascii=False)
 
 
